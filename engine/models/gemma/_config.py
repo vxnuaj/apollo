@@ -16,14 +16,6 @@ class EmbeddingConfig:
     embedding_init: Initializer
 
 @dataclass(config = ConfigDict(arbitrary_types_allowed = True))
-class LinearConfig:
-    shape: tuple[int, ...]
-    use_bias:bool
-    initializer: Initializer = xavier_normal()
-    bias_initializer: Initializer = zeros_init()
-    dtype: jax.typing.DTypeLike = None
-
-@dataclass(config = ConfigDict(arbitrary_types_allowed = True))
 class AttentionConfig:
     num_query_heads: int
     num_kv_heads: int

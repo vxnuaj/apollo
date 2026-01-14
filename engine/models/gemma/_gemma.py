@@ -2,7 +2,7 @@ from flax import linen as nn
 from flax.linen.initializers import xavier_normal, zeros_init
 from flax.typing import Initializer
 import jax
-from _config import GemmaConfig, EmbeddingConfig, LinearConfig, AttentionConfig, TransformerBlockConfig
+from _config import GemmaConfig, EmbeddingConfig, AttentionConfig, TransformerBlockConfig
 from dataclasses import asdict
 import jax.numpy as jnp
 from _math import apply_rope, create_causal_mask
