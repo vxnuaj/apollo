@@ -1,0 +1,367 @@
+.newChatWelcome {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+.sidebarWelcome {
+  position: absolute;
+  top: 68px;
+  left: 20px;
+  z-index: 100;
+}
+
+.themeWelcome {
+  position: absolute;
+  top: 116px;
+  left: 20px;
+  z-index: 100;
+}
+
+.settingsWelcome {
+  position: absolute;
+  top: 164px;
+  left: 20px;
+  z-index: 100;
+}
+
+.themeCollapsed {
+  position: absolute;
+  top: 176px;
+  left: 20px;
+  z-index: 100;
+}
+
+.settingsCollapsed {
+  position: absolute;
+  top: 224px;
+  left: 20px;
+  z-index: 100;
+}
+
+.newChatCollapsed {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  z-index: 100;
+}
+
+.sidebarCollapsed {
+  position: absolute;
+  top: 128px;
+  left: 20px;
+  z-index: 100;
+}
+
+.toggleButton {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggleButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.lightModeButton {
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #000000;
+}
+
+.lightModeButton:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.sidebarContainerWelcome {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+}
+
+.sidebarContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 150;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sidebar {
+  width: 900px;
+  height: 70vh;
+  max-height: 600px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  animation: slideIn 0.3s ease;
+}
+
+.lightModePanel {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.lightModePanel .title {
+  color: #000000;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.newChatButton {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newChatButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  color: #ffffff;
+}
+
+.lightModePanel .closeButton {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.lightModePanel .closeButton:hover {
+  color: #000000;
+}
+
+.mainContent {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sessionList {
+  width: 300px;
+  overflow-y: auto;
+  padding: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightModePanel .sessionList {
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.previewPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.previewEmpty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+.lightModePanel .previewEmpty {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.previewContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.previewTitle {
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightModePanel .previewTitle {
+  color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.previewMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.previewMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.previewMessageRole {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.previewMessageContent {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  word-wrap: break-word;
+}
+
+.lightModePanel .previewMessageRole {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.lightModePanel .previewMessageContent {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.sessionItem {
+  background: transparent;
+  border: none;
+  padding: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.sessionItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sessionItem.active {
+  background: transparent;
+}
+
+.sessionTitle {
+  flex: 1;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lightModePanel .sessionTitle {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.sessionItem:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  color: #ff6b6b;
+}
+
+.lightModePanel .deleteButton {
+  color: rgba(0, 0, 0, 0.4);
+}
