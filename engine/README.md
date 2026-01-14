@@ -1,3 +1,8 @@
+### Init.
+
+Build the Architecture for the model in order to load weights.
+
+
 ### Core / Must-Have Features
 1. Continuous / Dynamic Batching  
    - Dynamically form batches at every decode step  

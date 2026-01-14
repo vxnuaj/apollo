@@ -7,7 +7,7 @@ import os
 
 absl.logging.set_verbosity(absl.logging.ERROR)
 
-checkpoint_path = os.path.join(os.path.dirname(__file__), "..", "gemma-3-270m")
+checkpoint_path = os.path.join(os.path.dirname(__file__), "..",  "gemma-3-270m")
 checkpointer = ocp.StandardCheckpointer()
 checkpoint = checkpointer.restore(checkpoint_path)
 

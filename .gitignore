@@ -35,3 +35,5 @@ next-env.d.ts
 
 # project specific folders and files
 weights/*
+gemma-3-270m/*
+engine/models/gemma/gemma-3-270m/*
