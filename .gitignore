@@ -37,3 +37,12 @@ next-env.d.ts
 weights/*
 gemma-3-270m/*
 engine/models/gemma/gemma-3-270m/*
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+
+# Environment
+.env
+.env.local
