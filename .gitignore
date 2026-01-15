@@ -46,3 +46,5 @@ engine/models/gemma/gemma-3-270m/*
 # Environment
 .env
 .env.local
+
+__pycache__/*

@@ -11,7 +11,6 @@ Or with custom host/port:
 import argparse
 import uvicorn
 
-
 def main():
     parser = argparse.ArgumentParser(description="Run Apollo Inference Server")
     parser.add_argument("--host", default="0.0.0.0", help="Host to bind to")

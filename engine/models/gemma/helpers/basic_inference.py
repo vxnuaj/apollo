@@ -6,7 +6,9 @@ import absl.logging
 import os
 import sys
 
+file_parent_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, file_parent_dir)
 
 from _gemma import Gemma, TransformerBlock, Transformer
 from _config import GemmaConfig, EmbeddingConfig, AttentionConfig, TransformerBlockConfig
@@ -16,6 +18,7 @@ absl.logging.set_verbosity(absl.logging.ERROR)
 
 def load_gemma_checkpoint(checkpoint_path: str):
     """Load Gemma checkpoint from OCDBT format."""
+    print(f"Loading checkpoint from: {checkpoint_path}") 
     checkpoint_path = os.path.abspath(checkpoint_path)
     checkpointer = ocp.StandardCheckpointer()
     checkpoint = checkpointer.restore(checkpoint_path)

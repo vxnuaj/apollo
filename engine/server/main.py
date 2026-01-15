@@ -44,9 +44,10 @@ async def lifespan(app: FastAPI):
         tokenizer = GemmaTokenizer(settings.tokenizer_path)
         set_tokenizer(tokenizer)
         print(f"Tokenizer loaded (vocab size: {tokenizer.vocab_size})")
-        
-        print("Loading checkpoint...")
+
         flat_checkpoint = load_gemma_checkpoint(settings.model_path)
+        sys.exit(0)
+        
         checkpoint = restructure_checkpoint(flat_checkpoint)
         print(f"Checkpoint loaded ({len(flat_checkpoint)} parameter groups)")
         

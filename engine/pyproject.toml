@@ -27,4 +27,5 @@ dependencies = [
     "python-dotenv>=1.0.1",
     # Monitoring
     "prometheus-client>=0.21.1",
+    "aiosqlite>=0.22.1",
 ]

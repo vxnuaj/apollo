@@ -8,11 +8,17 @@ import os
 absl.logging.set_verbosity(absl.logging.ERROR)
 
 checkpoint_path = os.path.join(os.path.dirname(__file__), "..",  "gemma-3-270m")
+
+print(f"Loading weights from: {checkpoint_path}")
+
 checkpointer = ocp.StandardCheckpointer()
 checkpoint = checkpointer.restore(checkpoint_path)
+
+"""
 
 print(f"There are {len(checkpoint)} keys in the checkpoint\n")
 
 for k, v in checkpoint.items():
     keys = list(v.keys())
     print(f"{k}: {v[keys[0]].shape}")
+"""
