@@ -2,8 +2,8 @@ from flax import linen as nn
 from flax.linen.initializers import xavier_normal, zeros_init
 from flax.typing import Initializer
 import jax
-from gemma._config import GemmaConfig, EmbeddingConfig, AttentionConfig, TransformerBlockConfig
-from gemma._math import apply_rope, create_causal_mask
+from models.gemma._config import GemmaConfig, EmbeddingConfig, AttentionConfig, TransformerBlockConfig
+from models.gemma._math import apply_rope, create_causal_mask
 from dataclasses import asdict
 import jax.numpy as jnp
 

@@ -1,12 +1,12 @@
 # inference server
 
+from server.dependencies import set_model, get_model
 from server.config import settings
 from contextlib import asynccontextmanager
 import sys
 import os
-from server.routes import router # TODO - make it lmao
+from server.routes import router
 from server.dependencies import set_model
-from typing import AsyncContextManager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -18,28 +18,8 @@ RESET = "\033[0m"
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print(f"{BLUE}INITIALIZING:{RESET} Initializing inference server")
-  
-    try:
-#        from models.gemma._gemma import Gemma
-#        from models.gemma._config import GemmaConfig, EmbeddingConfig, TransformerBlockConfig,
-
-#        embedding_config = # TODO
-#        transformer_block_config = # TODO
-#        num_layers = # TODO
- 
-#        model_config = GemmaConfig(
-#            embedding_config = embedding_config,
-#            transformer_block_config = transformer_block_config,
-#            num_layers = num_layers
-#        )
-        
-
-        model = load_model()
-   
-    except Exception as e:
-        print()
-        
-    
+    set_model(settings.model_name)
+    model = get_model()
     yield
     
 app = FastAPI(

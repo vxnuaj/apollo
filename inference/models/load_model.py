@@ -1,24 +1,22 @@
-from pprint import pprint
-from model_registry import MODEL_REGISTRY, gemma_3_270m_config
+from models.model_registry import MODEL_REGISTRY, gemma_3_270m_config
 
 def load_model(model:str): # model= Union["gemma/gemma-270m", "deepseek/deepseek-r1", etc]
     model_name, model_param_name = model.split("/")
     try:
         MODEL_REGISTRY[model_name][model_param_name]
     except Exception as e:
+        import traceback
         print(f"{model} not found in model_registry")
-        
+        print(traceback.format_exc())
     model = _load_model_instance(model)        
-        
     return model
 
 def _load_model_instance(model:str): # model= Union["gemma/gemma-270m", "deepseek/deepseek-r1", etc]
     model_name, model_param_name = model.split("/") 
     if model_name == "gemma":
-        from gemma._gemma import Gemma
-        from gemma._gemma import GemmaConfig, EmbeddingConfig, TransformerBlockConfig, AttentionConfig
+        from models.gemma._gemma import Gemma
+        from models.gemma._gemma import GemmaConfig, EmbeddingConfig, TransformerBlockConfig, AttentionConfig
         if model_param_name == "gemma-3-270m": model_config = gemma_3_270m_config()         
-  
         embedding_config = EmbeddingConfig(
             num_embeddings = model_config["vocab_size"],
             features = model_config["embed_dim"],
